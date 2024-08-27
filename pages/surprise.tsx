@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 const SurprisePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900">
-      <div className="container mx-auto px-4 py-8">
+      <Navbar />
+      <div className="container mt-20 mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row">
           {/* Sección de imagen */}
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0">

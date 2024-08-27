@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -16,13 +16,23 @@ const defaultUser: User = {
 
 const UserSelectionPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([defaultUser]);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleUserSelect = (userId: string) => {
-    router.push("/home");
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      router.push("/home");
+    }, 1000);
   };
+
   const handleSurprise = () => {
-    router.push("/surprise");
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      router.push("/surprise");
+    }, 1000);
   };
 
   return (
@@ -69,6 +79,11 @@ const UserSelectionPage: React.FC = () => {
           <p className="mt-4 text-gray-300">Agregar perfil</p>
         </div>
       </div>
+      {isLoading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+        </div>
+      )}
     </div>
   );
 };

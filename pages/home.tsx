@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import MovieCard from "../components/MovieCard";
 import Image from "next/image";
 
@@ -75,44 +76,72 @@ const movies: Movie[] = [
   },
   {
     title: "Love Story",
-    description: "Esta es la descripción de la Película 1...",
+    description:
+      "Me encanta poder ver todas nuestras fotos, nuestros videos, conversaciones, audios, todo lo que tiene tu esencia y tiene impreso todo nuestro amor, en serio que esta historia de amor se ha convertido en lo más preciado que tengo en mi vida, que deseo poder vivir contigo, eres quien le da sentido a la vida, soy todo tuyo.",
     coverImage: "/images/9.jpg",
-    videoLink: "https://drive.google.com/file/d/video1",
+    videoLink:
+      "https://drive.google.com/file/d/1mc-CX88UlZZ_PIRMJxi0Yuj-9wBzFa9Y/view?usp=drive_link",
   },
   {
-    title: "La primera",
+    title: "Desde que te vi",
     description:
       "Porque fue de las primeras veces que pude escuchar ese dulce sonido que sale de tu boca, porque la primera vez que pude verte me emocioné tanto que no podía creer que estuviese pasando, porque es de esas primeras veces que se recuerdan por siempre, con alegría, con emoción, porque estuve seguro y estoy seguro que quiero volver a ver siempre esa perfecta sonrisa.",
     coverImage: "/images/10.jpg",
-    videoLink: "https://drive.google.com/file/d/video1",
+    videoLink:
+      "https://drive.google.com/file/d/1mpBIYlFLFrNbOvjB3s9POtPBA9HuUTCL/view?usp=drive_link",
   },
 ];
 
 const HomePage: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="relative w-full h-40 sm:h-60 md:h-80 lg:h-96 mb-8">
-        <Image
-          src="/images/hero.webp"
-          alt="Banner"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-        <div className="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8 w-full bg-gradient-to-t from-black to-transparent">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
-            Disfruta de nuestro pequeño Cine, videos con recuerdos llenos de
-            amor.
-          </h1>
+    <div className="min-h-screen bg-gray-900">
+      <Navbar />
+      <div className="container mx-auto px-4 py-8">
+        <div className="relative mt-20 w-full h-80 md:h-80 lg:h-96 mb-8">
+          <Image
+            src="/images/hero.webp"
+            alt="Banner"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
+          <div className="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8 w-full bg-gradient-to-t from-black to-transparent">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
+              Disfruta de nuestro pequeño Cine, videos con recuerdos llenos de
+              amor.
+            </h1>
+          </div>
         </div>
-      </div>
-      <h1 className="text-3xl font-bold text-white mb-8">
-        Películas Populares
-      </h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {movies.map((movie, index) => (
-          <MovieCard key={index} {...movie} />
-        ))}
+        <h1 className="text-3xl font-bold text-white mb-8">
+          Películas Populares
+        </h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {movies.map((movie, index) => (
+            <MovieCard key={index} {...movie} />
+          ))}
+        </div>
+
+        <div className="mt-16 bg-gray-800 rounded-lg p-8 text-slate-300">
+          <h2 className="text-2xl leading-relaxed">
+            Aunque parece que ha terminado nuestra historia se sigue escribiendo
+            aún, habrá muchos más momentos que podremos virir y luego poder ver
+            en nuestras fotos y videos, estoy muy seguro que como yo tu quieres
+            formar juntos muy lindos y felices momentos, tenemos toda una
+            eternidad para hacerlo, nuestra propia historia, nuestra pelicula de
+            un amor que nació un día y sigue creciendo.
+          </h2>
+          <h1 className="mt-6 text-3xl leading-relaxed text-slate-100">
+            Feliz Aniversario mi bellísima princesa.
+          </h1>
+          <h1 className="mb-6 text-4xl leading-relaxed text-red-500">
+            Te amo muchísimo.
+          </h1>
+          <h2 className="text-2xl leading-relaxed">
+            Puede que no hayas visto todas las sorpresas por aquí y falten un
+            par, tal vez sería mejor idea <strong>regresar</strong> un poco y
+            revisar.
+          </h2>
+        </div>
       </div>
     </div>
   );
