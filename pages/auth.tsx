@@ -42,7 +42,7 @@ const Auth = () => {
       <div className="bg-black w-full h-full bg-opacity-50">
         <nav className="px-12 py-5">
           <Image
-            src="/images/logo.png"
+            src="/images/s-flix.svg"
             className="h-12"
             width={24}
             height={24}
