@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef, useEffect } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import Image from "next/image";
 import Input from "@/components/input";
 import { useRouter } from "next/router";
@@ -38,12 +38,12 @@ const Auth = () => {
   };
 
   return (
-    <div className="relative h-full w-full bg-[url('/images/hero.webp')] bg-no-repeat bg-center bg-fixed bg-cover">
-      <div className="bg-black w-full h-full bg-opacity-50">
-        <div className="flex justify-center">
+    <div className="relative h-screen w-full bg-[url('/images/hero.webp')] bg-no-repeat bg-center bg-fixed bg-cover">
+      <div className="bg-black w-full h-full bg-opacity-50 flex items-center justify-center">
+        <div className="w-full max-w-md">
           <form
             onSubmit={handleSubmit}
-            className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full"
+            className="bg-black bg-opacity-70 px-16 py-16 rounded-md w-full"
           >
             <h2 className="text-white text-4xl mb-8 font-semibold">
               {variant === "login" ? "Iniciar sesión" : "Registrarse"}
