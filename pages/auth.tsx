@@ -40,15 +40,6 @@ const Auth = () => {
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.webp')] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full bg-opacity-50">
-        <nav className="px-12 py-5">
-          <Image
-            src="/images/s-flix.svg"
-            className="h-12"
-            width={24}
-            height={24}
-            alt="logo"
-          />
-        </nav>
         <div className="flex justify-center">
           <form
             onSubmit={handleSubmit}
